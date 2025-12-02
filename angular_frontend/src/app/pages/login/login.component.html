@@ -1,0 +1,20 @@
+<div class="auth-card">
+  <h2>Login</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>Email</label>
+    <input type="email" formControlName="email" placeholder="you@example.com" />
+    <div class="error" *ngIf="form.controls.email.invalid && form.controls.email.touched">Valid email required</div>
+
+    <label>Password</label>
+    <input type="password" formControlName="password" placeholder="********" />
+    <div class="error" *ngIf="form.controls.password.invalid && form.controls.password.touched">Password required</div>
+
+    <button type="submit">Log In</button>
+    <div class="error" *ngIf="error">{{ error }}</div>
+  </form>
+
+  <p class="muted">
+    Don't have an account?
+    <a routerLink="/register">Create one</a>
+  </p>
+</div>

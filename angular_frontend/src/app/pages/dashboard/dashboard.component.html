@@ -1,0 +1,8 @@
+<div class="card">
+  <h2>Dashboard</h2>
+  <p *ngIf="!me">Loading your profile...</p>
+  <div *ngIf="me">
+    <p>Welcome, <strong>{{ me.display_name || me.email }}</strong></p>
+    <p><small>User ID: {{ me.id }}</small></p>
+  </div>
+</div>
